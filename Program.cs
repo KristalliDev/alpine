@@ -22,8 +22,9 @@ namespace alpine
         public class HelpFormatter : DefaultHelpFormatter
         {
             public HelpFormatter(CommandContext ctx) : base(ctx)
-            { }
-            
+            {
+            }
+
             public override CommandHelpMessage Build()
             {
                 EmbedBuilder.Color = DiscordColor.VeryDarkGray;
@@ -57,6 +58,7 @@ namespace alpine
             commands.SetHelpFormatter<HelpFormatter>();
             commands.RegisterCommands<Ping>();
             commands.RegisterCommands<Shut>();
+            commands.RegisterCommands<Info>();
             // Connecting to discord
             await discord.ConnectAsync(new DiscordActivity("@alpine help | al!help", ActivityType.ListeningTo));
             await Task.Delay(-1);
