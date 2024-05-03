@@ -13,11 +13,12 @@ namespace alpine.Commands
             // TODO
             // Make an embed with the info of the bot
             var embed = new DiscordEmbedBuilder();
-            embed.WithTitle("Info");
-            embed.WithDescription("Info coming soon");
+            embed.WithTitle("Alpine");
+            embed.WithDescription("Info coming soon...");
+            embed.WithUrl("https://github.com/KristalliDev/yeet");
             embed.AddFields(new DiscordEmbedField[]
             {
-                new DiscordEmbedField("Version", "1.0.0", true),
+                new DiscordEmbedField("Version", "1.0.1", true),
                 new DiscordEmbedField("Creator", "birb", true),
                 new DiscordEmbedField("Framework", "DisCatSharp", true),
                 new DiscordEmbedField("Language", "C#", true),

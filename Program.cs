@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using alpine.Commands;
+using Microsoft.Extensions.Logging;
 using DisCatSharp;
 using DisCatSharp.CommandsNext;
 using DisCatSharp.CommandsNext.Converters;
 using DisCatSharp.CommandsNext.Entities;
 using DisCatSharp.Entities;
 using DisCatSharp.Enums;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using alpine.Commands;
 
 namespace alpine
 {
@@ -21,9 +21,7 @@ namespace alpine
         // Help command formatter
         public class HelpFormatter : DefaultHelpFormatter
         {
-            public HelpFormatter(CommandContext ctx) : base(ctx)
-            {
-            }
+            public HelpFormatter(CommandContext ctx) : base(ctx) { }
 
             public override CommandHelpMessage Build()
             {
