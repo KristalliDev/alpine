@@ -52,12 +52,14 @@ namespace alpine
             {
                 StringPrefixes = [prefix],
             });
-            // Registering commands and setting help formatter
+            // Setting help formatter
             commands.SetHelpFormatter<HelpFormatter>();
+            // Registering commands
             commands.RegisterCommands<Ping>();
             commands.RegisterCommands<Shut>();
             commands.RegisterCommands<Info>();
-            // Connecting to discord
+            commands.RegisterCommands<Die>();
+            // Connecting to discordd
             await discord.ConnectAsync(new DiscordActivity("@alpine help | al!help", ActivityType.ListeningTo));
             await Task.Delay(-1);
         }
