@@ -16,6 +16,13 @@
 
     <ItemGroup>
       <None Include="bin\Debug\net8.0\config.json" />
+      <None Include="obj\config.json" />
+      <None Remove="config.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net8.0\NuGet.Frameworks.dll" />
+      <Content Include="obj\project.nuget.cache" />
     </ItemGroup>
 
 </Project>
