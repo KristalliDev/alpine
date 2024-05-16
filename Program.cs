@@ -46,6 +46,8 @@ namespace alpine
                 Intents = DiscordIntents.All,
                 MinimumLogLevel = LogLevel.Debug,
                 MobileStatus = true,
+                Locale = "en-UK",
+                Timezone = "UTC"
             });
             // Command configuration
             var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
@@ -59,6 +61,7 @@ namespace alpine
             commands.RegisterCommands<Shut>();
             commands.RegisterCommands<Info>();
             commands.RegisterCommands<Die>();
+            commands.RegisterCommands<GitHub>();
             // Connecting to discordd
             await discord.ConnectAsync(new DiscordActivity("@alpine help | al!help", ActivityType.ListeningTo));
             await Task.Delay(-1);

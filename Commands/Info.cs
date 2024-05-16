@@ -18,7 +18,7 @@ namespace alpine.Commands
             embed.WithUrl("https://github.com/KristalliDev/yeet");
             embed.AddFields(new DiscordEmbedField[]
             {
-                new DiscordEmbedField("Version", "1.0.2", true),
+                new DiscordEmbedField("Version", "1.0.5", true),
                 new DiscordEmbedField("Creator", "birb", true),
                 new DiscordEmbedField("Framework", "DisCatSharp", true),
                 new DiscordEmbedField("Language", "C#", true),
