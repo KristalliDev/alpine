@@ -5,7 +5,8 @@ namespace alpine.Commands
 {
     public class Die : BaseCommandModule
     {
-        [Command("Die"), Description("Dies"), RequireOwner]
+        [Command("Die"), Description("Dies")]
+        [RequireOwner, Hidden]
         public async Task DieModule(CommandContext ctx)
         {
             await ctx.RespondAsync("Dies.");

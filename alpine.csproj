@@ -8,9 +8,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="lava\plugin\**" />
+      <EmbeddedResource Remove="lava\plugin\**" />
+      <None Remove="lava\plugin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="DisCatSharp" Version="10.6.3-nightly-010" />
       <PackageReference Include="DisCatSharp.CommandsNext" Version="10.6.3-nightly-010" />
       <PackageReference Include="DisCatSharp.Common" Version="10.6.3-nightly-010" />
+      <PackageReference Include="DisCatSharp.Lavalink" Version="10.6.3-nightly-010" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 

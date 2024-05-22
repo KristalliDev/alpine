@@ -8,6 +8,8 @@ using DisCatSharp.Entities;
 using DisCatSharp.Enums;
 using Newtonsoft.Json;
 using alpine.Commands;
+using DisCatSharp.Lavalink;
+using DisCatSharp.Net;
 
 namespace alpine
 {
@@ -49,6 +51,20 @@ namespace alpine
                 Locale = "en-UK",
                 Timezone = "UTC"
             });
+            // Lavalink
+            var ep = new ConnectionEndpoint
+            {
+                Hostname = "127.0.0.1",
+                Port = 2333,
+            };
+
+            var lavaConfig = new LavalinkConfiguration
+            {
+                Password = "youshallnotpass",
+                RestEndpoint = ep,
+                SocketEndpoint = ep
+            };
+            var lava = discord.UseLavalink();
             // Command configuration
             var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
             {
@@ -58,12 +74,14 @@ namespace alpine
             commands.SetHelpFormatter<HelpFormatter>();
             // Registering commands
             commands.RegisterCommands<Ping>();
-            commands.RegisterCommands<Shut>();
             commands.RegisterCommands<Info>();
             commands.RegisterCommands<Die>();
             commands.RegisterCommands<GitHub>();
+            commands.RegisterCommands<Status>();
+            commands.RegisterCommands<LavaCmd>();
             // Connecting to discordd
             await discord.ConnectAsync(new DiscordActivity("@alpine help | al!help", ActivityType.ListeningTo));
+            await lava.ConnectAsync(lavaConfig);
             await Task.Delay(-1);
         }
     }
