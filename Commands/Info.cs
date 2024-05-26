@@ -15,7 +15,7 @@ namespace alpine.Commands
             var embed = new DiscordEmbedBuilder();
             embed.WithTitle("Alpine");
             embed.WithDescription("Info coming soon...");
-            embed.WithUrl("https://github.com/KristalliDev/yeet");
+            embed.WithUrl("https://github.com/KristalliDev/alpine");
             embed.AddFields(new DiscordEmbedField[]
             {
                 new DiscordEmbedField("Version", "1.0.5", true),

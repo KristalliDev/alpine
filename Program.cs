@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using DisCatSharp;
 using DisCatSharp.CommandsNext;
 using DisCatSharp.CommandsNext.Converters;
 using DisCatSharp.CommandsNext.Entities;
 using DisCatSharp.Entities;
 using DisCatSharp.Enums;
-using Newtonsoft.Json;
-using alpine.Commands;
 using DisCatSharp.Lavalink;
 using DisCatSharp.Net;
+using alpine.Commands;
 
 namespace alpine
 {
@@ -60,7 +60,7 @@ namespace alpine
 
             var lavaConfig = new LavalinkConfiguration
             {
-                Password = "youshallnotpass",
+                Password = "",
                 RestEndpoint = ep,
                 SocketEndpoint = ep
             };
@@ -78,7 +78,9 @@ namespace alpine
             commands.RegisterCommands<Die>();
             commands.RegisterCommands<GitHub>();
             commands.RegisterCommands<Status>();
-            commands.RegisterCommands<LavaCmd>();
+            commands.RegisterCommands<Join>();
+            commands.RegisterCommands<Leave>();
+            commands.RegisterCommands<Play>();
             // Connecting to discordd
             await discord.ConnectAsync(new DiscordActivity("@alpine help | al!help", ActivityType.ListeningTo));
             await lava.ConnectAsync(lavaConfig);

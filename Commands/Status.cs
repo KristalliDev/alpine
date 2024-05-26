@@ -10,8 +10,8 @@ namespace alpine.Commands
         [Hidden, RequireOwner]
         public async Task StatusCommand(CommandContext ctx, [RemainingText] string status)
         {
-                await ctx.Client.UpdateStatusAsync(new DiscordActivity($"{status}", ActivityType.Custom));
-                await ctx.RespondAsync($"Status updated to {status}");
+            await ctx.Client.UpdateStatusAsync(new DiscordActivity($"{status}", ActivityType.Custom));
+            await ctx.RespondAsync($"Status updated to {status}");
         }
     }
 }
