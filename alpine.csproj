@@ -14,11 +14,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="DisCatSharp" Version="10.6.3-nightly-010" />
-      <PackageReference Include="DisCatSharp.CommandsNext" Version="10.6.3-nightly-010" />
-      <PackageReference Include="DisCatSharp.Common" Version="10.6.3-nightly-010" />
-      <PackageReference Include="DisCatSharp.Lavalink" Version="10.6.3-nightly-010" />
+      <PackageReference Include="DisCatSharp" Version="10.6.3-nightly-011" />
+      <PackageReference Include="DisCatSharp.CommandsNext" Version="10.6.3-nightly-011" />
+      <PackageReference Include="DisCatSharp.Common" Version="10.6.3-nightly-011" />
+      <PackageReference Include="DisCatSharp.Lavalink" Version="10.6.3-nightly-011" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="WaifuIM.Web" Version="1.1.0" />
     </ItemGroup>
 
     <ItemGroup>

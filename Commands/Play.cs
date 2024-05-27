@@ -9,7 +9,8 @@ namespace alpine.Commands
     public class Play : BaseCommandModule
     {
         [GroupCommand, Command("play"), Aliases("p"), Description("Plays Spotify songs from uri")]
-        public async Task PlayModule(CommandContext ctx, [RemainingText] string query)
+        public async Task PlayModule(CommandContext ctx,
+            [RemainingText] string query)
         {
             if (ctx.Member.VoiceState == null || ctx.Member.VoiceState.Channel! == null!)
             {

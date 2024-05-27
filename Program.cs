@@ -21,10 +21,8 @@ namespace alpine
             MainAsync(args).GetAwaiter().GetResult();
         }
         // Help command formatter
-        public class HelpFormatter : DefaultHelpFormatter
+        public class HelpFormatter(CommandContext ctx) : DefaultHelpFormatter(ctx)
         {
-            public HelpFormatter(CommandContext ctx) : base(ctx) { }
-
             public override CommandHelpMessage Build()
             {
                 EmbedBuilder.Color = DiscordColor.VeryDarkGray;
