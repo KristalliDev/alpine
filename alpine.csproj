@@ -33,8 +33,4 @@
       <Content Include="obj\project.nuget.cache" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="lava\logs\" />
-    </ItemGroup>
-
 </Project>

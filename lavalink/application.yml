@@ -31,13 +31,21 @@ plugins:
       countryCode: "UK" # the country code you want to use for searching lyrics via ISRC. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 lavalink:
   plugins:
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.1.1"
-      repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
-      snapshot: false # set to true if you want to use snapshot builds (see below)
+    - dependency: "com.github.lavalink-devs.lavaplayer-youtube-source:plugin:1.0.4"
+      repository: "https://jitpack.io"
+    - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0"
+      repository: "https://maven.lavalink.dev/releases"
+      snapshot: false
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.1"
+      repository: "https://maven.lavalink.dev/releases"
+      snapshot: false
+    - dependency: "com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0"
+      repository: "https://maven.lavalink.dev/releases"
+      snapshot: false
   server:
     password: "youshallnotpass"
     sources:
-      youtube: true # Keep this at false, for youtube support see the plugins section above.
+      youtube: false # Keep this at false, for youtube support see the plugins section above.
       bandcamp: true
       soundcloud: true
       twitch: true

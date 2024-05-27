@@ -8,7 +8,7 @@ namespace alpine.Commands
 {
     public class Play : BaseCommandModule
     {
-        [GroupCommand, Command("play"), Aliases("p"), Description("Plays Spotify songs from uri")]
+        [GroupCommand, Command("play"), Aliases("p"), Description("Plays songs from uri")]
         public async Task PlayModule(CommandContext ctx,
             [RemainingText] string query)
         {
@@ -39,7 +39,8 @@ namespace alpine.Commands
             {
                 LavalinkLoadResultType.Track => loadResult.GetResultAs<LavalinkTrack>(),
                 LavalinkLoadResultType.Playlist => loadResult.GetResultAs<LavalinkPlaylist>().Tracks.First(),
-                LavalinkLoadResultType.Search => loadResult.GetResultAs<LavalinkTrack>(),
+                LavalinkLoadResultType.Empty => throw new NotImplementedException(),
+                LavalinkLoadResultType.Error => throw new NotImplementedException(),
                 _ => throw new InvalidOperationException("Unexpected load result type.")
             };
             await gp.PlayAsync(track);
